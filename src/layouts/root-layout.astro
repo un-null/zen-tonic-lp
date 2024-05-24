@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
+
+const { title, desc } = Astro.props;
 ---
 
 <html lang="ja">
@@ -8,7 +10,8 @@ import Header from "../components/header.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <title>title</title>
+    <title>{title}</title>
+    <meta name="description" content={desc} />
   </head>
   <body class="bg-[#FAFAFA]">
     <Header />
