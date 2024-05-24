@@ -1,0 +1,20 @@
+---
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>title</title>
+  </head>
+  <body class="bg-[#FAFAFA]">
+    <Header />
+    <main class="mx-auto my-20 max-w-screen-lg px-4">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

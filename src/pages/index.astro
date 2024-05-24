@@ -1,16 +1,96 @@
 ---
-
+import RootLayout from "../layouts/root-layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <RootLayout>
+    <section class="space-y-10">
+      <div class="space-y-4 text-center">
+        <h1 class="text-3xl font-bold">習慣という名の、静かなトニック</h1>
+        <p class="text-base text-zinc-800">
+          Notionと連携し、日々の習慣化記録をみんなでシェアしよう
+        </p>
+      </div>
+
+      <div class="mx-auto h-fit w-fit">
+        <a
+          href="https://zen-tonic.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-sm bg-[#e06259] px-6 py-3 text-lg text-white"
+        >
+          無料で始める
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-28 space-y-8 md:mt-40">
+      <h1 class="text-center text-3xl font-bold">Features</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+          <p class="font-bold">Notion連携</p>
+          <p class="text-sm text-zinc-400">
+            Notionと連携し、習慣を記録できます
+          </p>
+        </div>
+        <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+          <p class="font-bold">みんなと共有</p>
+          <p class="text-sm text-zinc-400">
+            SNSのように、Notionの記録を共有できます
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-28 space-y-8 md:mt-40">
+      <h1 class="text-center text-3xl font-bold">Comment</h1>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+          <p class="font-bold">xxx</p>
+          <p class="text-sm text-zinc-400">xxx</p>
+        </div>
+        <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+          <p class="font-bold">xxx</p>
+          <p class="text-sm text-zinc-400">xxx</p>
+        </div>
+        <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+          <p class="font-bold">xxx</p>
+          <p class="text-sm text-zinc-400">xxx</p>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-20 h-fit w-fit text-center">
+        <a
+          href="/contact"
+          class="block rounded-sm bg-[#e06259] px-6 py-3 text-base text-white"
+        >
+          コメントを投稿する
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-28 space-y-8 md:mt-40">
+      <div class="space-y-4 text-center">
+        <h1 class="text-3xl font-bold">Zen Tonic を今すぐ使ってみる</h1>
+        <p class="text-base text-zinc-400">完全無料で使うことができます</p>
+      </div>
+      <div class="mx-auto h-fit w-fit space-y-4 text-center">
+        <a
+          href="https://zen-tonic.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-sm bg-[#e06259] px-6 py-3 text-base text-white"
+        >
+          無料で始める
+        </a>
+        <p class="text-sm text-zinc-400">現在βテスト中です</p>
+      </div>
+    </section>
+  </RootLayout>
+</>
