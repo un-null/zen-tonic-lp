@@ -1,0 +1,25 @@
+---
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+
+const { title, desc } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+  </head>
+  <body class="bg-[#FAFAFA]">
+    <Header />
+    <main class="mx-auto my-20 max-w-screen-lg px-4">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

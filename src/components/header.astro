@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/logo.svg";
+---
+
+<header class="w-full border-b border-zinc-300 bg-white">
+  <div class="mx-auto flex max-w-screen-lg items-center justify-between p-4">
+    <div class="flex items-center gap-1">
+      <div class="h-10 w-10">
+        <Image src={logo} alt={""} />
+      </div>
+      <div class="text-lg font-bold">Zen Tonic</div>
+    </div>
+
+    <nav class="flex space-x-4 text-sm md:text-base">
+      <a
+        href="https://zen-tonic.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-sm border border-zinc-300 px-4 py-2 font-bold"
+      >
+        使い方
+      </a>
+      <a
+        href="https://zen-tonic.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden rounded-sm bg-[#e06259] px-4 py-2 text-white md:block"
+      >
+        無料で始める
+      </a>
+    </nav>
+  </div>
+</header>
