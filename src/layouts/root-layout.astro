@@ -15,9 +15,9 @@ const { title, desc } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={desc} />
   </head>
-  <body class="bg-[#FAFAFA]">
+  <body class="grid-rows-layout grid min-h-screen w-screen bg-[#FAFAFA]">
     <Header />
-    <main class="mx-auto my-20 max-w-screen-lg px-4">
+    <main class="mx-auto my-20 w-full max-w-screen-lg px-4">
       <slot />
     </main>
     <Footer />
