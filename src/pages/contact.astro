@@ -1,0 +1,16 @@
+---
+import { Form } from "@/components/form";
+import RootLayout from "@/layouts/root-layout.astro";
+---
+
+<RootLayout
+  title="Zen Tonic | Notion x 習慣化アプリケーション"
+  desc="Zen Tonic コンタクトページ"
+>
+  <div class="space-y-4 text-center">
+    <h1 class="text-3xl font-bold">問い合わせフォーム</h1>
+    <p class="text-base text-zinc-400">ご意見・ご要望をご記入ください</p>
+  </div>
+
+  <Form client:load />
+</RootLayout>

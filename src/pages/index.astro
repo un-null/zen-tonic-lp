@@ -1,5 +1,30 @@
 ---
-import RootLayout from "../layouts/root-layout.astro";
+import RootLayout from "@/layouts/root-layout.astro";
+import { Client } from "@notionhq/client";
+
+const notion = new Client({
+  auth: import.meta.env.NOTION_TOKEN,
+});
+
+const pages = await notion.databases.query({
+  database_id: import.meta.env.DB_ID,
+  filter: {
+    property: "Product",
+    select: {
+      equals: "zen tonic",
+    },
+  },
+  sorts: [{ property: "Date", direction: "descending" }],
+});
+
+const comments = pages.results.map((comment) => {
+  if (comment.object === "page" && "properties" in comment) {
+    return comment.properties["Text"]?.type === "rich_text"
+      ? comment.properties["Text"].rich_text[0]?.plain_text
+      : "";
+  }
+  return "";
+});
 ---
 
 <RootLayout
@@ -45,18 +70,13 @@ import RootLayout from "../layouts/root-layout.astro";
   <section class="mt-28 space-y-8 md:mt-40">
     <h1 class="text-center text-3xl font-bold">Comment</h1>
     <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-      <div class="space-y-4 rounded-sm bg-white p-4 shadow">
-        <p class="font-bold">xxx</p>
-        <p class="text-sm text-zinc-400">xxx</p>
-      </div>
-      <div class="space-y-4 rounded-sm bg-white p-4 shadow">
-        <p class="font-bold">xxx</p>
-        <p class="text-sm text-zinc-400">xxx</p>
-      </div>
-      <div class="space-y-4 rounded-sm bg-white p-4 shadow">
-        <p class="font-bold">xxx</p>
-        <p class="text-sm text-zinc-400">xxx</p>
-      </div>
+      {
+        comments.map((comment) => (
+          <div class="space-y-4 rounded-sm bg-white p-4 shadow">
+            <p class="text-sm font-bold">{comment}</p>
+          </div>
+        ))
+      }
     </div>
 
     <div class="mx-auto mt-20 h-fit w-fit text-center">
